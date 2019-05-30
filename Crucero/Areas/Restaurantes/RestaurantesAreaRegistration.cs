@@ -1,22 +1,22 @@
 ﻿using System.Web.Mvc;
 
-namespace Crucero.Areas.Areas
+namespace Crucero.Areas.Restaurantes
 {
-    public class AreasAreaRegistration : AreaRegistration 
+    public class RestaurantesAreaRegistration : AreaRegistration 
     {
         public override string AreaName 
         {
             get 
             {
-                return "Areas";
+                return "Restaurantes";
             }
         }
 
         public override void RegisterArea(AreaRegistrationContext context) 
         {
             context.MapRoute(
-                "Areas_default",
-                "Areas/{controller}/{action}/{id}",
+                "Restaurantes_default",
+                "Restaurantes/{controller}/{action}/{id}",
                 new { action = "Index", id = UrlParameter.Optional }
             );
         }

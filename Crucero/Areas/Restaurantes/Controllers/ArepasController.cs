@@ -1,22 +1,32 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Web;
 using System.Web.Mvc;
 using BDContext;
 
-namespace Crucero.Areas.Areas.Controllers
+namespace Crucero.Areas.Restaurantes.Controllers
 {
     public class ArepasController : Controller
     {
         private cruceroEntities db = new cruceroEntities();
 
-        // GET: Areas/Arepas
+        // GET: Restaurantes/Arepas
         public ActionResult Index()
+        {
+            IEnumerable<menu> menu = db.menu.Where(x=> x.restaurante == 2).ToList();
+            return View(menu);
+        }
+
+        public ActionResult IndexHorarios()
         {
             return View(db.restaurante.ToList());
         }
 
-        // GET: Areas/Arepas/Details/5
+        // GET: Restaurantes/Arepas/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -31,13 +41,13 @@ namespace Crucero.Areas.Areas.Controllers
             return View(restaurante);
         }
 
-        // GET: Areas/Arepas/Create
+        // GET: Restaurantes/Arepas/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Areas/Arepas/Create
+        // POST: Restaurantes/Arepas/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -54,7 +64,7 @@ namespace Crucero.Areas.Areas.Controllers
             return View(restaurante);
         }
 
-        // GET: Areas/Arepas/Edit/5
+        // GET: Restaurantes/Arepas/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -69,7 +79,7 @@ namespace Crucero.Areas.Areas.Controllers
             return View(restaurante);
         }
 
-        // POST: Areas/Arepas/Edit/5
+        // POST: Restaurantes/Arepas/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -85,7 +95,7 @@ namespace Crucero.Areas.Areas.Controllers
             return View(restaurante);
         }
 
-        // GET: Areas/Arepas/Delete/5
+        // GET: Restaurantes/Arepas/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -100,7 +110,7 @@ namespace Crucero.Areas.Areas.Controllers
             return View(restaurante);
         }
 
-        // POST: Areas/Arepas/Delete/5
+        // POST: Restaurantes/Arepas/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

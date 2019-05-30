@@ -59,9 +59,9 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Menu</h6>
-                        <a class="collapse-item" href="buttons.html">Horarios</a>
-                        <a class="collapse-item" href="cards.html">Capacidad</a>
+                        <h6 class="collapse-header"></h6>
+                        <a class="collapse-item" href="@Url.Action("Index","Arepas", new { area="Restaurantes", tipo=""})">Menu</a>
+                        <a class="collapse-item" href="@Url.Action("IndexHorarios","Arepas", new { area="Restaurantes", tipo=""})">Horarios y Capacidad</a>
                     </div>
                 </div>
             </li>

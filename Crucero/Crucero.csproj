@@ -126,8 +126,8 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Areas\Areas\AreasAreaRegistration.cs" />
-    <Compile Include="Areas\Areas\Controllers\ArepasController.cs" />
+    <Compile Include="Areas\Restaurantes\Controllers\ArepasController.cs" />
+    <Compile Include="Areas\Restaurantes\RestaurantesAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -1840,12 +1840,13 @@
     <Content Include="Scripts\bootstrap\scss\_type.scss" />
     <Content Include="Scripts\bootstrap\scss\_utilities.scss" />
     <Content Include="Scripts\bootstrap\scss\_variables.scss" />
-    <Content Include="Areas\Areas\Views\web.config" />
-    <Content Include="Areas\Areas\Views\Arepas\Create.cshtml" />
-    <Content Include="Areas\Areas\Views\Arepas\Delete.cshtml" />
-    <Content Include="Areas\Areas\Views\Arepas\Details.cshtml" />
-    <Content Include="Areas\Areas\Views\Arepas\Edit.cshtml" />
-    <Content Include="Areas\Areas\Views\Arepas\Index.cshtml" />
+    <Content Include="Areas\Restaurantes\Views\web.config" />
+    <Content Include="Areas\Restaurantes\Views\Arepas\Create.cshtml" />
+    <Content Include="Areas\Restaurantes\Views\Arepas\Delete.cshtml" />
+    <Content Include="Areas\Restaurantes\Views\Arepas\Details.cshtml" />
+    <Content Include="Areas\Restaurantes\Views\Arepas\Edit.cshtml" />
+    <Content Include="Areas\Restaurantes\Views\Arepas\Index.cshtml" />
+    <Content Include="Areas\Restaurantes\Views\Arepas\IndexHorarios.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\bootstrap\js\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap\js\bootstrap.bundle.min.js" />
@@ -1880,8 +1881,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Areas\Models\" />
-    <Folder Include="Areas\Areas\Views\Shared\" />
+    <Folder Include="Areas\Restaurantes\Models\" />
+    <Folder Include="Areas\Restaurantes\Views\Shared\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
