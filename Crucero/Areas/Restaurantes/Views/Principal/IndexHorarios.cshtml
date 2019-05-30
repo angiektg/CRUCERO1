@@ -1,43 +1,41 @@
-﻿@model IEnumerable<BDContext.menu>
+﻿@model IEnumerable<BDContext.restaurante>
 
 @{
-    ViewBag.Title = "Menú";
+    ViewBag.Title = "Horarios y Capacidad";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 
 <section class="content-header">
     <h1>
         @ViewBag.Title
     </h1>
     <ol class="breadcrumb">
-        <li><a href="@Url.Action("Index", "Home", new { area = "" })"><i class="fa fa-home"></i> Inicio</a></li>
-        <li class="active"> /Pizzas</li>
+        <li><a href="@Url.Action("IndexHorarios", "Home", new { area = "" })"><i class="fa fa-home"></i> Inicio</a></li>
+        <li class="active"> - Principal</li>
     </ol>
 </section>
 
 
 <section class="content">
-    <a href="@Url.Action("Create_Menu")" class="btn btn-primary" style="margin-top: 0.5em; margin-bottom: 1em;"><i class="fa fa-plus"></i> Crear</a>
+    <a href="@Url.Action("Create")" class="btn btn-primary" style="margin-top: 0.5em; margin-bottom: 1em;"><i class="fa fa-plus"></i> Crear</a>
 
     <div class="table-responsive">
         <table class="table table-striped table-bordered" id="listado">
             <thead>
                 <tr>
+                    @*<th>
+                            @Html.DisplayNameFor(model => model.nombre)
+                        </th>*@
                     <th>
-                        @Html.DisplayNameFor(model => model.nombre)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.plato)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.jornada1.nombre)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.fecha)
+                        @Html.DisplayNameFor(model => model.horario)
                     </th>
                     @*<th>
-                            @Html.DisplayNameFor(model => model.tipo)
+                            @Html.DisplayNameFor(model => model.principal)
                         </th>*@
+                    <th>
+                        @Html.DisplayNameFor(model => model.capacidad)
+                    </th>
                     <th></th>
                 </tr>
             </thead>
@@ -46,21 +44,18 @@
                 @foreach (var item in Model)
                 {
                     <tr>
+                        @*<td>
+                                @Html.DisplayFor(modelItem => item.nombre)
+                            </td>*@
                         <td>
-                            @Html.DisplayFor(modelItem => item.nombre)
-                        </td>
-                        <td>
-                            @(String.Join(",", item.plato.Select(x => x.nombre)))
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.jornada1.nombre)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.fecha)
+                            @Html.DisplayFor(modelItem => item.horario)
                         </td>
                         @*<td>
-                                @Html.DisplayFor(modelItem => item.tipo)
+                                @Html.DisplayFor(modelItem => item.principal)
                             </td>*@
+                        <td>
+                            @Html.DisplayFor(modelItem => item.capacidad)
+                        </td>
                         <td>
                             <a href="@Url.Action("Edit", new { id = item.id })" class="btn btn-xs btn-warning"><i class="fa fa-edit"></i> Editar</a>
                         </td>

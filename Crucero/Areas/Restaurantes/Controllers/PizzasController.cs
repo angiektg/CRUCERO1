@@ -17,27 +17,37 @@ namespace Crucero.Areas.Restaurantes.Controllers
         // GET: Restaurantes/Pizzas
         public ActionResult Index()
         {
-            return View(db.restaurante.ToList());
+            IEnumerable<menu> menu = db.menu.Where(x => x.restaurante1.nombre == "Pizza del Oceano").ToList();
+            return View(menu);
         }
-
-        // GET: Restaurantes/Pizzas/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult IndexHorarios()
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            restaurante restaurante = db.restaurante.Find(id);
-            if (restaurante == null)
-            {
-                return HttpNotFound();
-            }
-            return View(restaurante);
+            var Horario = db.restaurante.Where(x => x.nombre == "Pizza del Oceano").ToList();
+            return View(Horario);
         }
+        // GET: Restaurantes/Pizzas/Details/5
+        //public ActionResult Details(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    restaurante restaurante = db.restaurante.Find(id);
+        //    if (restaurante == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(restaurante);
+        //}
 
         // GET: Restaurantes/Pizzas/Create
         public ActionResult Create()
         {
+            return View();
+        }
+        public ActionResult Create_Menu()
+        {
+            ViewBag.jornada = new SelectList(db.jornada, "id", "nombre");
             return View();
         }
 
@@ -46,18 +56,37 @@ namespace Crucero.Areas.Restaurantes.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,nombre,horario,principal,capacidad")] restaurante restaurante)
+        public ActionResult Create(restaurante restaurant)
         {
             if (ModelState.IsValid)
             {
-                db.restaurante.Add(restaurante);
+
+                restaurant.nombre = "Pizza del Oceano";
+                restaurant.principal = 0;
+                db.restaurante.Add(restaurant);
+                db.SaveChanges();
+                return RedirectToAction("IndexHorarios");
+            }
+
+            return View(restaurant);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create_Menu(menu menus)
+        {
+            ViewBag.jornada = new SelectList(db.jornada, "id", "nombre", menus.jornada);
+            if (ModelState.IsValid)
+            {
+                menus.restaurante = 1;
+               
+                db.menu.Add(menus);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(restaurante);
+            return View(menus);
         }
-
         // GET: Restaurantes/Pizzas/Edit/5
         public ActionResult Edit(int? id)
         {

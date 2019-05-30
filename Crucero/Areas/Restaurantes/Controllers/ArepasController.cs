@@ -17,7 +17,7 @@ namespace Crucero.Areas.Restaurantes.Controllers
         // GET: Restaurantes/Arepas
         public ActionResult Index()
         {
-            IEnumerable<menu> menu = db.menu.Where(x=> x.restaurante == 2).ToList();
+            IEnumerable<menu> menu = db.menu.Where(x=> x.restaurante1.nombre == "Arepa la concha del mar").ToList();
             return View(menu);
         }
 
@@ -80,7 +80,7 @@ namespace Crucero.Areas.Restaurantes.Controllers
             if (ModelState.IsValid)
             {
                 menus.restaurante = 2;
-                menus.tipo = "General";
+                
                 db.menu.Add(menus);
                 db.SaveChanges();
                 return RedirectToAction("Index");

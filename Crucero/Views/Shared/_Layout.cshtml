@@ -89,8 +89,8 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header"></h6>
                         <a class="collapse-item" href="@Url.Action("Index","Pizzas", new { area="Restaurantes", tipo=""})">Menú</a>
-                        <a class="collapse-item" href="@Url.Action("IndexHorarios","Pizzas", new { area="Restaurantes", tipo=""})">Horarios</a>
-                        <a class="collapse-item" href="utilities-animation.html">Capacidad</a>
+                        <a class="collapse-item" href="@Url.Action("IndexHorarios","Pizzas", new { area="Restaurantes", tipo=""})">Horarios y Capacidad</a>
+                        @*<a class="collapse-item" href="utilities-animation.html">Capacidad</a>*@
                         @*<a class="collapse-item" href="utilities-other.html">Other</a>*@
                     </div>
                 </div>
@@ -105,10 +105,9 @@
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Menú Principal</h6>
-                        <a class="collapse-item" href="utilities-color.html">Menú Alterno</a>
-                        <a class="collapse-item" href="utilities-border.html">Horarios</a>
-                        <a class="collapse-item" href="utilities-animation.html">Capacidad</a>
+                        @*<h6 class="collapse-header">Menú Principal</h6>*@
+                        <a class="collapse-item" href="@Url.Action("Index","Principal", new { area="Restaurantes", tipo=""})">Menú</a>
+                        <a class="collapse-item" href="@Url.Action("IndexHorarios","Principal", new { area="Restaurantes", tipo=""})">Horarios y Capacidad</a>
                         @*<a class="collapse-item" href="utilities-other.html">Other</a>*@
                     </div>
                 </div>

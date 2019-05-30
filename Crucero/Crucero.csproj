@@ -1869,6 +1869,9 @@
     <Content Include="Areas\Administracion\Views\Platos\Details.cshtml" />
     <Content Include="Areas\Administracion\Views\Platos\Edit.cshtml" />
     <Content Include="Areas\Administracion\Views\Platos\Index.cshtml" />
+    <Content Include="Areas\Restaurantes\Views\Pizzas\Create_Menu.cshtml" />
+    <Content Include="Areas\Restaurantes\Views\Principal\Create_Menu.cshtml" />
+    <Content Include="Areas\Restaurantes\Views\Principal\IndexHorarios.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\bootstrap\js\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap\js\bootstrap.bundle.min.js" />
