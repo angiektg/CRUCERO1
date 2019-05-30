@@ -80,6 +80,7 @@ namespace Crucero.Areas.Restaurantes.Controllers
             if (ModelState.IsValid)
             {
                 menus.restaurante = 2;
+                menus.tipo = "General";
                 db.menu.Add(menus);
                 db.SaveChanges();
                 return RedirectToAction("Index");

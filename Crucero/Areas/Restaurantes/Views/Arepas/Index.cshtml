@@ -30,14 +30,14 @@
                         @Html.DisplayNameFor(model => model.plato)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.jornada)
+                        @Html.DisplayNameFor(model => model.jornada1.nombre)
                     </th>
                     <th>
                         @Html.DisplayNameFor(model => model.fecha)
                     </th>
-                    <th>
+                    @*<th>
                         @Html.DisplayNameFor(model => model.tipo)
-                    </th>
+                    </th>*@
                     <th></th>
                 </tr>
             </thead>
@@ -53,14 +53,14 @@
                         @(String.Join(",",item.plato.Select(x => x.nombre)))
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.jornada)
+                        @Html.DisplayFor(modelItem => item.jornada1.nombre)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.fecha)
                     </td>
-                    <td>
+                    @*<td>
                         @Html.DisplayFor(modelItem => item.tipo)
-                    </td>
+                    </td>*@
                     <td>
                         <a href="@Url.Action("Edit", new { id = item.id })" class="btn btn-xs btn-warning"><i class="fa fa-edit"></i> Editar</a>
                     </td>
