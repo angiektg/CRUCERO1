@@ -55,6 +55,19 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-cookie"></i>
+                    <span>Administrar Platos</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header"></h6>
+                        <a class="collapse-item" href="@Url.Action("Index","Platos", new { area="Administracion", tipo=""})">Platos</a>
+                        @*<a class="collapse-item" href="@Url.Action("IndexHorarios","Platos", new { area="Restaurantes", tipo=""})">Horarios y Capacidad</a>*@
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-cookie"></i>
                     <span>Restaurante Arepas</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -74,9 +87,9 @@
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Menú</h6>
-                        @*<a class="collapse-item" href="utilities-color.html">Menú</a>*@
-                        <a class="collapse-item" href="utilities-border.html">Horarios</a>
+                        <h6 class="collapse-header"></h6>
+                        <a class="collapse-item" href="@Url.Action("Index","Pizzas", new { area="Restaurantes", tipo=""})">Menú</a>
+                        <a class="collapse-item" href="@Url.Action("IndexHorarios","Pizzas", new { area="Restaurantes", tipo=""})">Horarios</a>
                         <a class="collapse-item" href="utilities-animation.html">Capacidad</a>
                         @*<a class="collapse-item" href="utilities-other.html">Other</a>*@
                     </div>
@@ -102,7 +115,7 @@
             </li>
 
 
-          
+
 
 
 

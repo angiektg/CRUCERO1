@@ -24,15 +24,15 @@
         <table class="table table-striped table-bordered" id="listado">
             <thead>
                 <tr>
-                    <th>
+                    @*<th>
                         @Html.DisplayNameFor(model => model.nombre)
-                    </th>
+                    </th>*@
                     <th>
                         @Html.DisplayNameFor(model => model.horario)
                     </th>
-                    <th>
+                    @*<th>
                         @Html.DisplayNameFor(model => model.principal)
-                    </th>
+                    </th>*@
                     <th>
                         @Html.DisplayNameFor(model => model.capacidad)
                     </th>
@@ -44,15 +44,15 @@
                 @foreach (var item in Model)
                 {
                     <tr>
-                        <td>
+                        @*<td>
                             @Html.DisplayFor(modelItem => item.nombre)
-                        </td>
+                        </td>*@
                         <td>
                             @Html.DisplayFor(modelItem => item.horario)
                         </td>
-                        <td>
+                        @*<td>
                             @Html.DisplayFor(modelItem => item.principal)
-                        </td>
+                        </td>*@
                         <td>
                             @Html.DisplayFor(modelItem => item.capacidad)
                         </td>

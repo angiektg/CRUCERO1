@@ -126,7 +126,11 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Administracion\AdministracionAreaRegistration.cs" />
+    <Compile Include="Areas\Administracion\Controllers\PlatosController.cs" />
     <Compile Include="Areas\Restaurantes\Controllers\ArepasController.cs" />
+    <Compile Include="Areas\Restaurantes\Controllers\PizzasController.cs" />
+    <Compile Include="Areas\Restaurantes\Controllers\PrincipalController.cs" />
     <Compile Include="Areas\Restaurantes\RestaurantesAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -1847,6 +1851,24 @@
     <Content Include="Areas\Restaurantes\Views\Arepas\Edit.cshtml" />
     <Content Include="Areas\Restaurantes\Views\Arepas\Index.cshtml" />
     <Content Include="Areas\Restaurantes\Views\Arepas\IndexHorarios.cshtml" />
+    <Content Include="Areas\Restaurantes\Views\Arepas\Create_Menu.cshtml" />
+    <Content Include="Areas\Restaurantes\Views\Pizzas\Create.cshtml" />
+    <Content Include="Areas\Restaurantes\Views\Pizzas\Delete.cshtml" />
+    <Content Include="Areas\Restaurantes\Views\Pizzas\Details.cshtml" />
+    <Content Include="Areas\Restaurantes\Views\Pizzas\Edit.cshtml" />
+    <Content Include="Areas\Restaurantes\Views\Pizzas\Index.cshtml" />
+    <Content Include="Areas\Restaurantes\Views\Principal\Create.cshtml" />
+    <Content Include="Areas\Restaurantes\Views\Principal\Delete.cshtml" />
+    <Content Include="Areas\Restaurantes\Views\Principal\Details.cshtml" />
+    <Content Include="Areas\Restaurantes\Views\Principal\Edit.cshtml" />
+    <Content Include="Areas\Restaurantes\Views\Principal\Index.cshtml" />
+    <Content Include="Areas\Restaurantes\Views\Pizzas\IndexHorarios.cshtml" />
+    <Content Include="Areas\Administracion\Views\web.config" />
+    <Content Include="Areas\Administracion\Views\Platos\Create.cshtml" />
+    <Content Include="Areas\Administracion\Views\Platos\Delete.cshtml" />
+    <Content Include="Areas\Administracion\Views\Platos\Details.cshtml" />
+    <Content Include="Areas\Administracion\Views\Platos\Edit.cshtml" />
+    <Content Include="Areas\Administracion\Views\Platos\Index.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\bootstrap\js\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap\js\bootstrap.bundle.min.js" />
@@ -1881,6 +1903,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Administracion\Models\" />
+    <Folder Include="Areas\Administracion\Views\Shared\" />
     <Folder Include="Areas\Restaurantes\Models\" />
     <Folder Include="Areas\Restaurantes\Views\Shared\" />
     <Folder Include="Models\" />
